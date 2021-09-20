@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\AddressBook;
+use Session;
 
 class AddressBookController extends Controller
 {
@@ -70,9 +71,13 @@ class AddressBookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(AddressBook $addressbook)
     {
-        //
+
+        return view('addressbook.show', [
+            "addressbook" => $addressbook
+        ]);
+
     }
 
     /**
@@ -115,6 +120,7 @@ class AddressBookController extends Controller
         $addressbook->email = $request->email;
         $addressbook->save();
 
+        $request->session()->flash('alert-success', 'The addressbook was updated');
         return redirect()->route('addressbook.index');
 
     }
@@ -125,8 +131,11 @@ class AddressBookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(AddressBook $addressbook)
     {
-        //
+        $addressbook->delete();
+        Session::flash('alert-success', 'The addressbook was deleted');
+
+        return redirect()->route('addressbook.index');
     }
 }

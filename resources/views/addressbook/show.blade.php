@@ -20,13 +20,14 @@
                     <div class="form-group row">
                         <label for="id" class="col-sm-2 col-form-label">ID</label>
                         <div class="col-sm-10">
-                        <input type="text" class="form-control" name="id" id="id" value="{{ $addressbook->id }}" required>
+                            {{ $addressbook->id }}
                         </div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Update</button>
-                    <a href="{{ route('addressbook.index') }}" class="btn btn-danger float-right"><i class="fa fa-times"></i> Cancel</a>
+                    <a href="{{ route('addressbook.edit', $addressbook->id) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
+
+                    <button class="btn btn-danger float-right"><i class="fa fa-trash"></i> Destroy</button>
                 </div>
             </div>
         </div>
