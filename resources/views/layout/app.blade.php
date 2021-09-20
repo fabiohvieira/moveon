@@ -13,7 +13,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="/css/adminlte.min.css">
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini text-sm">
 <!-- Site wrapper -->
 <div class="wrapper">
 

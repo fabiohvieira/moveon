@@ -24,3 +24,6 @@ Route::get('/login', function () {
 Route::get('/lockscreen', function () {
     return view('layout/login');
 });
+
+
+Route::resource('addressbook', AddressBookController::class);
