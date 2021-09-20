@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\AddressBook;
 use Session;
+use App\Models\AddressBook;
+use Illuminate\Http\Request;
+use App\Http\Requests\AddressBookRequest;
 
 class AddressBookController extends Controller
 {
@@ -38,9 +39,11 @@ class AddressBookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AddressBookRequest $request)
     {
 
+        $validated = $request->validated();
+        
         $addressbook = new AddressBook();
         $addressbook->search_type = $request->search_type;
         $addressbook->name = $request->name;

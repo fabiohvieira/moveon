@@ -17,21 +17,22 @@ class CreateAddressBookTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('tax_id',50);
-            $table->string('search_type', 5);
-            $table->string('address_line1');
-            $table->string('address_line2');
-            $table->string('address_line3');
-            $table->string('address_line4');
-            $table->string('postal_code', 15);
-            $table->string('city', 25);
-            $table->string('country', 25);
-            $table->string('state', 3);
-            $table->string('phone_prefix', 6);
-            $table->string('phone_number', 20);
-            $table->string('email');
+            $table->string('search_type', 5)->nullable();
+            $table->string('address_line1')->nullable();
+            $table->string('address_line2')->nullable();
+            $table->string('address_line3')->nullable();
+            $table->string('address_line4')->nullable();
+            $table->string('postal_code', 15)->nullable();
+            $table->string('city', 25)->nullable();
+            $table->string('country', 25)->nullable();
+            $table->string('state', 3)->nullable();
+            $table->string('phone_prefix', 6)->nullable();
+            $table->string('phone_number', 20)->nullable();
+            $table->string('email')->nullable();
 
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
