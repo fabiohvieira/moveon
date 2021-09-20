@@ -27,3 +27,4 @@ Route::get('/lockscreen', function () {
 
 
 Route::resource('addressbook', AddressBookController::class);
+Route::resource('inventory/item', ItemController::class);

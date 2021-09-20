@@ -43,6 +43,8 @@
         <!-- Main content -->
         <section class="content">
 
+            @include('layout.alerts')
+
             @yield('content')
 
         </section>

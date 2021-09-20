@@ -12,9 +12,9 @@ class AddressBookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(AddressBook $addressbook)
     {
-        $addressbook = AddressBook::all();
+        $addressbook = $addressbook->all();
 
         return view('addressbook.index', compact('addressbook'));
     }
@@ -26,7 +26,9 @@ class AddressBookController extends Controller
      */
     public function create()
     {
-        return view('addressbook.create');
+        $addressbook = new AddressBook();
+
+        return view('addressbook.create', compact('addressbook'));
     }
 
     /**
@@ -55,6 +57,8 @@ class AddressBookController extends Controller
         $addressbook->email = $request->email;
 
         $addressbook->save();
+
+        $request->session()->flash('alert-success', 'The addressbook was succesfuly registered');
 
         return redirect()->route('addressbook.index');
 

@@ -20,7 +20,7 @@
                 <th width="10%">Search Type</th>
                 <th>Name</th>
                 <th>Tax ID</th>
-                <th width="5%"></th>
+                <th width="10%"></th>
             </tr>
         </thead>
         <tbody>
@@ -31,7 +31,9 @@
                     <td>{{ $ab->name }}</td>
                     <td>{{ $ab->tax_id }}</td>
                     <td align="center">
-                        <a href="{{ route('addressbook.edit', $ab->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                        <a href="{{ route('addressbook.show', $ab->id) }}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i></a>
+                        <a href="{{ route('addressbook.edit', $ab->id) }}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></a>
+                        <a href="{{ route('addressbook.destroy', $ab->id) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
                     </td>
                 </tr>
             @endforeach
