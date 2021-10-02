@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +26,10 @@ Route::get('/lockscreen', function () {
     return view('layout/login');
 });
 
+Route::resources([
 
-Route::resource('addressbook', AddressBookController::class);
-Route::resource('inventory/items', ItemController::class);
+    'addressbook' => AddressBookController::class,
+    'inventory/items' => ItemController::class,
+    'purchase/order' => PurchaseOrderController::class,
+
+]);
