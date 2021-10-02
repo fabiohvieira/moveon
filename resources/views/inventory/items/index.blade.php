@@ -18,9 +18,9 @@
         <thead>
             <tr>
                 <th width="5%">ID</th>
-                <th width="10%">Search Type</th>
-                <th>Name</th>
-                <th>Tax ID</th>
+                <th width="10%">Code</th>
+                <th>Reference</th>
+                <th>Description</th>
                 <th>Price</th>
                 <th width="13%"></th>
             </tr>
