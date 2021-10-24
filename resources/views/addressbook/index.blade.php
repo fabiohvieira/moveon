@@ -3,7 +3,7 @@
 @section('title', 'Addressbook')
 
 @section('content')
-ddd
+
 <div class="card card-body">
     <div class="row pb-2">
         <div class="col-md-10">
